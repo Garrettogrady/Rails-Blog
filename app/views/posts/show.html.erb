@@ -1,0 +1,13 @@
+<h1 class="title">
+  
+  <%= @post.title %>
+
+</h1><!-- /.title -->
+
+<p class="date">
+  submitted <%= time_ago_in_words(@post.created_at) %> Ago
+</p><!-- /.date -->
+
+<p class="body">
+  <%= @post.body %>
+</p><!-- /.body -->
