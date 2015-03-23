@@ -2,6 +2,16 @@
 <h1> New Post</h1>
 
 <%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+    <div id="errors">
+      <h2> <=% pluarlize(@post.errors.count, "error") %> prevented this post form savinv </h2>
+      <ul>
+        <% post.errors.full)messages.each do |msg| %>
+          <li> <=% msg %> </li>
+        <% end %>
+      </ul>
+    </div><!-- /#errors -->
+  <% end %>
   <p>
     <%= f.label :title %> <br>
     <%= f.text_field :title %> 
